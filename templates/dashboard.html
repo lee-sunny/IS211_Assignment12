@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Dashboard</title>
+  </head>
+  <style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+  }
+  </style>
+
+  <body>
+    <h1>Dashboard</h1>
+    <h2>Students</h2>
+    <table style="width:100%">
+        <tr>
+          <th>Student ID</th>
+          <th>Student Name</th>
+        </tr>
+      {% for student in students %}
+        <tr>
+          <td><a class="mr-2" href="{{ url_for('view_results') }}">{{ student.student_id }}</a></td>
+          <td><a class="mr-2" href="{{ url_for('view_results') }}">{{ student.firstname }} {{ student.lastname }}</a></td>
+        </tr>
+      {% endfor %}
+    </table>
+	<a href='/student/add'>Add Student</a><br>
+
+    <h2>Quizzes</h2>
+    <table style="width:100%">
+        <tr>
+          <th>Quiz ID</th>
+          <th>Subject</th>
+          <th>Total number of questions</th>
+          <th>Quiz Date</th>
+        </tr>
+      {% for quiz in quizzes %}
+        <tr>
+          <td>{{ quiz.quiz_id }}</td>
+          <td>{{ quiz.qz_subject }}</td>
+          <td>{{ quiz.questions }}</td>
+          <td>{{ quiz.quiz_date }}</td>
+        </tr>
+      {% endfor %}
+    </table>
+    <a href='/quiz/add'>Add Quiz</a><br>
+    <a href='/results/add'>Add Scores</a><br>
+  </body>
+</html>
+
+
+

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+ <head>
+  <style>
+  table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+  }
+  th, td {
+    padding: 5px;
+  }
+  </style>
+ </head>
+
+  <body>
+    <h2>Quiz Results</h2>
+      <h2 class="article-title">{{ student.student_id }}</h2>
+      <h2 class="article-title">{{ student.firstname }}</h2>
+      <h2 class="article-title">{{ student.lastname }}</h2>
+  </body>
+  <a href='/results/add'>Add Scores</a><br>
+  <a href='/dashboard'>Return to Dashboard</a>
+</html>
